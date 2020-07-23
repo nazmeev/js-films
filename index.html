@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Форма входа</title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">JSExpert</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" id="gallery" href="#">Галлерея</a>
+        <a class="p-2 text-dark" id="about" href="#">О пользователе</a>
+      </nav>
+      <a class="btn btn-outline-primary" id="btn-logout" href="#">Выход</a>
+    </div>
+
+    <main class="text-center signIn hide" role="main">
+        <div class="alert alert-danger hide" role="alert"></div>
+        
+        <form class="form-signin" action="http://localhost:3000/login" method="POST">
+            <h1 class="h3 mb-3 font-weight-normal">Пожалуйста войдите</h1>
+            <label for="inputEmail" class="sr-only">Email</label>
+            <input name="login" value="admin@admin.ad" type="text" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+            <div class="mb-3"></div>
+            <label for="inputPassword" class="sr-only">Пароль</label>
+            <input name="password" value="1234512345" type="text" id="inputPassword" class="form-control" placeholder="Password" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+            <div class="mb-3"></div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+        </form>
+    </main>
+
+    <main class="userInfoContainer hide">
+      <div class="userInfo container">
+        <div class="row">
+          <div class="col-sm-12 col-xs-12">
+            <h1>User information</h1>
+            <div class="form-group">
+              <label>Login</label>
+              <p class="form-control-static" id="login-info"></p>
+            </div>
+            <div class="form-group">
+              <label for="password-info">Password</label>
+              <div class="input-group">
+                <input type="password" class="form-control" id="password-info" placeholder="Password">
+                <span class="input-group-append">
+                  <button class="btn btn-outline-secondary btn-toggle" type="button">Show Password</button>
+                </span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-back">Back</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main role="main" class="galleryContainer hide">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Автомобильная галлерея</h1>
+          <p class="lead text-muted">На этой странице вы можете увидеть отличную галлерею, которая дает вам возможность ознакомится с нашим каталогом транспортных средств. </p>
+          <div class="row">
+            <div class="col-md-6">
+                <div class="btn-group" id="dropdown-name">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Сортировка по 
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" date-sort="nameaz" href="#">имени: от А до Я</a>
+                      <a class="dropdown-item" date-sort="nameza" href="#">имени: от Я до А</a>                  
+                      <a class="dropdown-item" date-sort="dateaz" href="#">Сначала новые</a>
+                      <a class="dropdown-item" date-sort="dateza" href="#">Сначала старые</a>                  
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-5">
+              <div class="text-center createContainer">
+                <a href="#" id="addItemGallery" class="btn btn-primary" data-target="#createModal" data-toggle="modal">Добавить картинку</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row" id="galleryItems"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal Create -->
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel">  
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close close-add-gallery" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+          </div>
+          <form name="formAddItem">
+            <div class="modal-body" >
+              <div class="alert alert-danger alert-modal hide" role="alert"></div>
+              <div id="dialog-form">
+                  <h2>Create item to gallery</h2>
+                  <div class="form-group">
+                    <label for="InputTitle">Name</label>
+                    <input type="text" class="form-control" id="InputTitle" name="name" value="RENAULT" aria-describedby="nameHelp">
+                    <small id="nameHelp" class="form-text text-muted">Create name.</small>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="InputURL">URL</label>
+                    <input type="text" class="form-control" id="InputURL" name="url" value="desktopwallpapers.org.ua/mini/201507/40058.jpg" aria-describedby="urlHelp">
+                    <small id="urlHelp" class="form-text text-muted">Fill URL.</small>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="InputDescription">Description</label>
+                    <input type="text" class="form-control" id="InputDescription" name="description" value="Lorem ipsum dolor sit amet" aria-describedby="descriptionHelp">
+                    <small id="descriptionHelp" class="form-text text-muted">Some description.</small>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="InputDate">Date</label>
+                    <input type="text" class="form-control" id="InputDate" name="date" value="1322159200637" aria-describedby="dateHelp">
+                    <small id="dateHelp" class="form-text text-muted">Some date.</small>
+                  </div>
+              </div>
+            </div>
+            <div class="modal-footer" >
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Modal View -->
+    <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel">  
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close close-add-gallery" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src=js/utils/elements.js></script>
+    <script src=js/modules/NoticeModule.js></script>
+    <script src=js/modules/GalleryModule.js></script>
+    <script src=js/modules/ExtendGalleryModule.js></script>
+    <script src=js/modules/SignFormModule.js></script>
+    <script src=js/modules/SignFormValidationModule.js></script>
+    <script src=js/modules/ModalFormModule.js></script>
+    <script src=js/modules/UserinfoModule.js></script>
+    <script src=js/modules/DomModule.js></script>
+    <script src=js/modules/AuthModule.js></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/utils/moment.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>
+
